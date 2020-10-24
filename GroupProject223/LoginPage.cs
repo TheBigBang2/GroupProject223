@@ -107,6 +107,11 @@ namespace GroupProject223
         {
             
         }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 //  Registration form = new Registration();
