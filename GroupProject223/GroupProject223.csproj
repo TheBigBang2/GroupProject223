@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAccount.Designer.cs">
+      <DependentUpon>EditAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgotUserPasswordcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,21 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="RetrievePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetrievePassword.Designer.cs">
+      <DependentUpon>RetrievePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RetrieveSystemID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetrieveSystemID.Designer.cs">
+      <DependentUpon>RetrieveSystemID.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditAccount.resx">
+      <DependentUpon>EditAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgotUserPasswordcs.resx">
       <DependentUpon>ForgotUserPasswordcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetrievePassword.resx">
+      <DependentUpon>RetrievePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetrieveSystemID.resx">
+      <DependentUpon>RetrieveSystemID.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

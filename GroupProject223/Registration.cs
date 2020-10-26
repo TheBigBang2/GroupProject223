@@ -70,13 +70,14 @@ namespace GroupProject223
             string surname = tbSurname.Text;
             string contactNR = tbContactNr.Text;
             string password = tbPassword.Text;
-            string ConPassword = tbConPassword.Text;        
-
+            string ConPassword = tbConPassword.Text;
+            string secQuestion = cbSecurity.SelectedItem.ToString();
+            string secAnswer = tbSecAnswer.Text;
             try
             {
                 cnn = new SqlConnection(conString);
                 cnn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT into Person (System_ID, ID_Number, Email, Name ,Surname ,Contact_Nr ,Password) VALUES ('" + SystemID + "','" + IdNumber + "','" + email + "','" + name + "','" + surname + "','" + contactNR + "','" + password + "')", cnn);
+                SqlCommand cmd = new SqlCommand("INSERT into Person (System_ID, ID_Number, Email, Name ,Surname ,Contact_Nr ,Password, Security_Question, Security_Answer) VALUES ('" + SystemID + "','" + IdNumber + "','" + email + "','" + name + "','" + surname + "','" + contactNR + "','" + password + "','"+secQuestion+"','"+secAnswer+"')", cnn);
                 cmd.ExecuteNonQuery();
                 adapter = new SqlDataAdapter("Select * From Person", cnn);
                 adapter.Fill(table);
@@ -108,6 +109,27 @@ namespace GroupProject223
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.Show();
         }
     }
 }
