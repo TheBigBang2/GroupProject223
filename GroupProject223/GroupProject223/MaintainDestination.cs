@@ -95,11 +95,14 @@ namespace GroupProject223
         {
             string depLocation = textBox4.Text;
             string destination = textBox6.Text;
-            string duration = textBox5.Text;
             DateTime date = dateTimePicker2.Value;
-
+            if (string.IsNullOrEmpty(textBox4.Text) | string.IsNullOrEmpty(textBox6.Text) | string.IsNullOrEmpty(textBox5.Text))
+            {
+                MessageBox.Show("Enter valid values.");
+            }
             conn.Open();
-           int id = int.Parse(textBox7.Text);
+            int duration = int.Parse(textBox5.Text);
+            int id = int.Parse(textBox7.Text);
             str = "UPDATE DESTINATIONS SET DEPARTURE_LOCATION='" + depLocation + "',DESTINATION_LOCATION='" + destination +
                     "',FLIGHT_DURATION='" + duration + "',FLIGHT_DATE='" + date + "'WHERE DESTINATION_ID='" + id + "'";
             cmm = new SqlCommand(str, conn);
@@ -132,6 +135,11 @@ namespace GroupProject223
             this.Close();
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -139,16 +147,22 @@ namespace GroupProject223
                 
                 string depLocation = textBox1.Text;
                 string destination = textBox2.Text;
-                string duration = textBox3.Text;
-                DateTime date= dateTimePicker1.Value;
-                conn.Open();
-                str = "INSERT INTO DESTINATIONS VALUES('" + depLocation + "','" + destination + "','" +duration+"','"+date+ "')";
-                //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
-                adapt = new SqlDataAdapter();
-                cmm = new SqlCommand(str, conn);
-                cmm.ExecuteNonQuery();
-                this.update();
-
+                if (string.IsNullOrEmpty(textBox1.Text) | string.IsNullOrEmpty(textBox2.Text) | string.IsNullOrEmpty(textBox3.Text))
+                {
+                    MessageBox.Show("Enter valid values.");
+                }
+                else
+                {
+                    int duration = int.Parse(textBox3.Text);
+                    DateTime date = dateTimePicker1.Value;
+                    conn.Open();
+                    str = "INSERT INTO DESTINATIONS VALUES('" + depLocation + "','" + destination + "','" + duration + "','" + date + "')";
+                    //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
+                    adapt = new SqlDataAdapter();
+                    cmm = new SqlCommand(str, conn);
+                    cmm.ExecuteNonQuery();
+                    this.update();
+                }
             }
             catch (Exception ex)
             {

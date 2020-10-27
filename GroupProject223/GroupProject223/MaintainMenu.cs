@@ -48,30 +48,36 @@ namespace GroupProject223
             {
                 string name = textBox1.Text;
                 string des = textBox2.Text;
-                double price = Convert.ToDouble(textBox3.Text);
-                conn.Open();
-                compstr = "SELECT * FROM COMPANIES WHERE COMPANY_NAME='" +comboBox1.Text+ "'";
-                int compID=0;
-
-                cmm = new SqlCommand(compstr, conn);
-                read = cmm.ExecuteReader();
-                if (read.HasRows)
+                if (string.IsNullOrEmpty(textBox1.Text) | string.IsNullOrEmpty(textBox2.Text))
                 {
-                    while (read.Read() && read.HasRows)
-                    {
-
-                        compID = (int)read["Company_ID"];
-                    }
-                    read.Close();
+                    MessageBox.Show("Enter valid values.");
                 }
+                else
+                {
+                    double price = Convert.ToDouble(textBox3.Text);
+                    conn.Open();
+                    compstr = "SELECT * FROM COMPANIES WHERE COMPANY_NAME='" + comboBox1.Text + "'";
+                    int compID = 0;
 
-                str = "INSERT INTO IN_FLIGHT_MENU VALUES('" + name + "','" + des + "','" + price + "','" + compID +"')";
-                //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
-                adapt = new SqlDataAdapter();
-                cmm = new SqlCommand(str, conn);
-                cmm.ExecuteNonQuery();
-                this.update();
+                    cmm = new SqlCommand(compstr, conn);
+                    read = cmm.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        while (read.Read() && read.HasRows)
+                        {
 
+                            compID = (int)read["Company_ID"];
+                        }
+                        read.Close();
+                    }
+
+                    str = "INSERT INTO IN_FLIGHT_MENU VALUES('" + name + "','" + des + "','" + price + "','" + compID + "')";
+                    //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
+                    adapt = new SqlDataAdapter();
+                    cmm = new SqlCommand(str, conn);
+                    cmm.ExecuteNonQuery();
+                    this.update();
+                }
             }
             catch (Exception ex)
             {
@@ -86,20 +92,27 @@ namespace GroupProject223
             int id = int.Parse(textBox4.Text);
             string name = textBox8.Text;
             string des = textBox6.Text;
-            double price = Convert.ToDouble(textBox10.Text);
+            if (string.IsNullOrEmpty(textBox1.Text) | string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Enter valid values.");
+            }
+            else
+            {
+                double price = Convert.ToDouble(textBox10.Text);
 
-            conn.Open();
-            
-            str = "UPDATE IN_FLIGHT_MENU SET MEAL_NAME='" + name + "',MEAL_DESCRIPTION='" +des +
-                    "',MEAL_PRICE='" +price + "'WHERE MEAL_ID='" +id + "'";
-            cmm = new SqlCommand(str, conn);
-            ds = new DataSet();
+                conn.Open();
 
-            adapt = new SqlDataAdapter();
-            adapt.DeleteCommand = cmm;
-            adapt.DeleteCommand.ExecuteNonQuery();
-            this.update();
-            conn.Close();
+                str = "UPDATE IN_FLIGHT_MENU SET MEAL_NAME='" + name + "',MEAL_DESCRIPTION='" + des +
+                        "',MEAL_PRICE='" + price + "'WHERE MEAL_ID='" + id + "'";
+                cmm = new SqlCommand(str, conn);
+                ds = new DataSet();
+
+                adapt = new SqlDataAdapter();
+                adapt.DeleteCommand = cmm;
+                adapt.DeleteCommand.ExecuteNonQuery();
+                this.update();
+                conn.Close();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
