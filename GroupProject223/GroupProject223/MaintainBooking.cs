@@ -100,7 +100,7 @@ namespace GroupProject223
                         while (read.Read() && read.HasRows)
                         {
 
-                            clientID = (int)read["Meal_ID"];
+                           mealID = (int)read["Meal_ID"];
                         }
                         read.Close();
                     }

@@ -15,3 +15,4 @@ C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\obj\Debu
 C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\obj\Debug\GroupProject223.MaintainCompanies.resources
 C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\obj\Debug\GroupProject223.MaintainDestination.resources
 C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\obj\Debug\GroupProject223.MaintainMenu.resources
+C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\obj\Debug\GroupProject223.Select_Meal.resources
