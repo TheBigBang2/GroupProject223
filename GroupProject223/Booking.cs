@@ -44,5 +44,19 @@ namespace GroupProject223
                 dateTimePicker2.Visible = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            //load data to listbox
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+
+        }
     }
 }
