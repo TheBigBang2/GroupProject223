@@ -40,16 +40,23 @@ namespace GroupProject223
         {
             try
             {
+
                 string name = textBox1.Text;
                 string location = textBox2.Text;
-                conn.Open();
-                str = "INSERT INTO COMPANIES VALUES('" +name + "','" +location + "')";
-                //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
-                adapt = new SqlDataAdapter();
-                cmm = new SqlCommand(str, conn);
-                cmm.ExecuteNonQuery();
-                this.update();
-
+                if (string.IsNullOrEmpty(textBox1.Text) | string.IsNullOrEmpty(textBox2.Text))
+                {
+                    MessageBox.Show("Enter valid values.");
+                }
+                else
+                {
+                    conn.Open();
+                    str = "INSERT INTO COMPANIES VALUES('" + name + "','" + location + "')";
+                    //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
+                    adapt = new SqlDataAdapter();
+                    cmm = new SqlCommand(str, conn);
+                    cmm.ExecuteNonQuery();
+                    this.update();
+                }
             }
             catch (Exception ex)
             {
@@ -64,17 +71,23 @@ namespace GroupProject223
             string name = textBox8.Text;
             string location = textBox6.Text;
             string id = textBox3.Text;
+            if (string.IsNullOrEmpty(textBox8.Text) | string.IsNullOrEmpty(textBox6.Text))
+            {
+                MessageBox.Show("Enter valid values.");
+            }
+            else
+            {
+                conn.Open();
+                str = "UPDATE COMPANIES SET COMPANY_NAME='" + name + "', COMPANY_LOCATION='" + location + "'WHERE COMPANY_ID='" + id + "'";
+                cmm = new SqlCommand(str, conn);
+                ds = new DataSet();
 
-            conn.Open();
-            str = "UPDATE COMPANIES SET COMPANY_NAME='"+name+"', COMPANY_LOCATION='" + location + "'WHERE COMPANY_ID='" +id+ "'";
-            cmm = new SqlCommand(str, conn);
-            ds = new DataSet();
-
-            adapt = new SqlDataAdapter();
-            adapt.UpdateCommand = cmm;
-            adapt.UpdateCommand.ExecuteNonQuery();
-            this.update();
-            conn.Close();
+                adapt = new SqlDataAdapter();
+                adapt.UpdateCommand = cmm;
+                adapt.UpdateCommand.ExecuteNonQuery();
+                this.update();
+                conn.Close();
+            }
         }
 
         private void label8_Click(object sender, EventArgs e)

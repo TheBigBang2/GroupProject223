@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace GroupProject223
 {
@@ -99,19 +100,26 @@ namespace GroupProject223
             string surname = textBox10.Text;
             string email = textBox9.Text;
             string password = textBox7.Text;
+            if (string.IsNullOrEmpty(name) | string.IsNullOrEmpty(surname) | string.IsNullOrEmpty(email) | string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("please enter values in all fields.");
 
-            conn.Open();
-            id = Int64.Parse(textBox8.Text);
-            str = "UPDATE CLIENTS SET CLIENT_NAME='" + name + "',CLIENT_SURNAME='" + surname + 
-                    "',CLIENT_EMAIL='" + email + "',PASSWORD='" + password + "'WHERE CLIENT_ID='"+id+"'";
-            cmm = new SqlCommand(str, conn);
-            ds = new DataSet();
+            }
+            else
+            {
+                conn.Open();
+                id = Int64.Parse(textBox8.Text);
+                str = "UPDATE CLIENTS SET CLIENT_NAME='" + name + "',CLIENT_SURNAME='" + surname +
+                        "',CLIENT_EMAIL='" + email + "',PASSWORD='" + password + "'WHERE CLIENT_ID='" + id + "'";
+                cmm = new SqlCommand(str, conn);
+                ds = new DataSet();
 
-            adapt = new SqlDataAdapter();
-            adapt.UpdateCommand= cmm;
-            adapt.UpdateCommand.ExecuteNonQuery();
-            this.update();
-            conn.Close();
+                adapt = new SqlDataAdapter();
+                adapt.UpdateCommand = cmm;
+                adapt.UpdateCommand.ExecuteNonQuery();
+                this.update();
+                conn.Close();
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -192,23 +200,34 @@ namespace GroupProject223
         {
             try
             {
-                id = Int64.Parse(textBox4.Text);
+               
+                
+
                 string name = textBox1.Text;
                 string surname = textBox2.Text;
                 string email = textBox3.Text;
                 string password = textBox5.Text;
-                conn.Open();
-                str = "INSERT INTO CLIENTS VALUES('" + id + "','" + name + "','" + surname + "','" + email + "','" + password + "')";
-                //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
-                adapt = new SqlDataAdapter();
-                cmm = new SqlCommand(str, conn);
-                cmm.ExecuteNonQuery();
-                this.update();
+                if (string.IsNullOrEmpty(name) | string.IsNullOrEmpty(surname) | string.IsNullOrEmpty(email) | string.IsNullOrEmpty(password) | string.IsNullOrEmpty(maskedTextBox1.Text))
+                {
+                    MessageBox.Show("please enter values in all fields.");
+
+                }
+                else
+                {
+                    id = Int64.Parse(maskedTextBox1.Text);
+                    conn.Open();
+                    str = "INSERT INTO CLIENTS VALUES('" + id + "','" + name + "','" + surname + "','" + email + "','" + password + "')";
+                    //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
+                    adapt = new SqlDataAdapter();
+                    cmm = new SqlCommand(str, conn);
+                    cmm.ExecuteNonQuery();
+                    this.update();
+                }
               
             }
                 catch(Exception ex)
             {
-                MessageBox.Show("ERROR: Client ID("+textBox4.Text+") already exists");
+                MessageBox.Show("ERROR: Client ID("+maskedTextBox1.Text+") already exists");
                 conn.Close();
             }
             conn.Close();

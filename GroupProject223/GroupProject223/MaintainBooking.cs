@@ -41,81 +41,92 @@ namespace GroupProject223
         {
           try
             {
+               
+
                 DateTime date= dateTimePicker1.Value;
                 string paymentMethod = comboBox1.Text;
-
-
-
-                double paid = double.Parse(textBox3.Text);
-                conn.Open();
-                string compstr = "SELECT * FROM CLIENTS WHERE CLIENT_ID='" + comboBox4.Text + "'";
-                int clientID = 0;
-
-                cmm = new SqlCommand(compstr, conn);
-                read = cmm.ExecuteReader();
-                if (read.HasRows)
+                if (string.IsNullOrEmpty(textBox3.Text))
                 {
-                    while (read.Read() && read.HasRows)
-                    {
-
-                        clientID = (int)read["ID"];
-                    }
-                    read.Close();
+                    MessageBox.Show("Enter valid values.");
                 }
-
-                int compID = 0;
-
-                compstr = "SELECT * FROM COMPANIES WHERE COMPANY_NAME='" + comboBox5.Text + "'";
-                cmm = new SqlCommand(compstr, conn);
-                read = cmm.ExecuteReader();
-                if (read.HasRows)
+                else if (double.Parse(textBox3.Text) == 0)
                 {
-                    while (read.Read() && read.HasRows)
-                    {
-
-                        compID = (int)read["COMPANY_ID"];
-                    }
-                    read.Close();
+                    MessageBox.Show("Amount paid cannot be 0.");
                 }
-
-                int mealID = 0;
-              
-                 compstr = "SELECT * FROM IN_FLIGHT_MENU WHERE Meal_Name='" + comboBox6.Text + "'";
-
-                cmm = new SqlCommand(compstr, conn);
-                read = cmm.ExecuteReader();
-                if (read.HasRows)
+                else
                 {
-                    while (read.Read() && read.HasRows)
+                    double paid = double.Parse(textBox3.Text);
+
+
+                    conn.Open();
+                    string compstr = "SELECT * FROM CLIENTS WHERE CLIENT_ID='" + comboBox4.Text + "'";
+                    int clientID = 0;
+
+                    cmm = new SqlCommand(compstr, conn);
+                    read = cmm.ExecuteReader();
+                    if (read.HasRows)
                     {
+                        while (read.Read() && read.HasRows)
+                        {
 
-                        clientID = (int)read["Meal_ID"];
+                            clientID = (int)read["ID"];
+                        }
+                        read.Close();
                     }
-                    read.Close();
-                }
 
-                int destinationID = 0;
-                compstr = "SELECT * FROM DESTINATIONS WHERE DESTINATION_LOCATION='" + comboBox7.Text + "'";
+                    int compID = 0;
 
-                cmm = new SqlCommand(compstr, conn);
-                read = cmm.ExecuteReader();
-                if (read.HasRows)
-                {
-                    while (read.Read() && read.HasRows)
+                    compstr = "SELECT * FROM COMPANIES WHERE COMPANY_NAME='" + comboBox5.Text + "'";
+                    cmm = new SqlCommand(compstr, conn);
+                    read = cmm.ExecuteReader();
+                    if (read.HasRows)
                     {
+                        while (read.Read() && read.HasRows)
+                        {
 
-                        destinationID = (int)read["DESTINATION_ID"];
+                            compID = (int)read["COMPANY_ID"];
+                        }
+                        read.Close();
                     }
-                    read.Close();
+
+                    int mealID = 0;
+
+                    compstr = "SELECT * FROM IN_FLIGHT_MENU WHERE Meal_Name='" + comboBox6.Text + "'";
+
+                    cmm = new SqlCommand(compstr, conn);
+                    read = cmm.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        while (read.Read() && read.HasRows)
+                        {
+
+                            clientID = (int)read["Meal_ID"];
+                        }
+                        read.Close();
+                    }
+
+                    int destinationID = 0;
+                    compstr = "SELECT * FROM DESTINATIONS WHERE DESTINATION_LOCATION='" + comboBox7.Text + "'";
+
+                    cmm = new SqlCommand(compstr, conn);
+                    read = cmm.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        while (read.Read() && read.HasRows)
+                        {
+
+                            destinationID = (int)read["DESTINATION_ID"];
+                        }
+                        read.Close();
+                    }
+
+                    str = "INSERT INTO BOOKINGS VALUES('" + date + "','" + paymentMethod + "','" + paid + "','" + clientID + "','" + compID + "','" + mealID + "','" + destinationID + "')";
+                    //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
+                    adapt = new SqlDataAdapter();
+                    cmm = new SqlCommand(str, conn);
+                    cmm.ExecuteNonQuery();
+                    this.update();
                 }
-
-                str = "INSERT INTO BOOKINGS VALUES('" + date+ "','" + paymentMethod + "','" + paid + "','" + clientID  +"','" + compID  +"','" + mealID  +"','" + destinationID + "')";
-                //str = "INSERT INTO CLIENTS VALUES('301111111111','r','r','r')";
-                adapt = new SqlDataAdapter();
-                cmm = new SqlCommand(str, conn);
-                cmm.ExecuteNonQuery();
-                this.update();
-
             }
            catch (Exception ex)
             {
@@ -154,20 +165,31 @@ namespace GroupProject223
         {
             DateTime date = dateTimePicker2.Value;
             string pMethod = comboBox2.Text;
-            double amount = double.Parse(textBox1.Text);
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
 
-            conn.Open();
-          int  id = int.Parse(textBox8.Text);
-            str = "UPDATE BOOKINGS SET BOOKING_DATE='" + date + "',PAYMENT_METHOD='" + pMethod +
-                    "',AMOUNT_PAID='" + amount + "'WHERE BOOKING_ID='" + id + "'";
-            cmm = new SqlCommand(str, conn);
-            ds = new DataSet();
+                MessageBox.Show("Enter valid values.");
+            }else if(double.Parse(textBox1.Text)==0)
+            {
+                MessageBox.Show("Amount paid cannot be 0.");
+            }
+            else
+            {
+                double amount = double.Parse(textBox1.Text);
 
-            adapt = new SqlDataAdapter();
-            adapt.UpdateCommand = cmm;
-            adapt.UpdateCommand.ExecuteNonQuery();
-            this.update();
-            conn.Close();
+                conn.Open();
+                int id = int.Parse(textBox8.Text);
+                str = "UPDATE BOOKINGS SET BOOKING_DATE='" + date + "',PAYMENT_METHOD='" + pMethod +
+                        "',AMOUNT_PAID='" + amount + "'WHERE BOOKING_ID='" + id + "'";
+                cmm = new SqlCommand(str, conn);
+                ds = new DataSet();
+
+                adapt = new SqlDataAdapter();
+                adapt.UpdateCommand = cmm;
+                adapt.UpdateCommand.ExecuteNonQuery();
+                this.update();
+                conn.Close();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -188,6 +210,11 @@ namespace GroupProject223
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void MaintainBooking_Load(object sender, EventArgs e)
