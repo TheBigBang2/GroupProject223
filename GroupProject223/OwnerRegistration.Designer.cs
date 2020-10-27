@@ -68,10 +68,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1045, 44);
+            this.label1.Size = new System.Drawing.Size(1099, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome and Congratulations on your brand new System !";
             // 
@@ -97,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(201, 68);
+            this.label2.Location = new System.Drawing.Point(204, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(781, 58);
             this.label2.TabIndex = 3;
@@ -418,7 +418,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 604);
+            this.ClientSize = new System.Drawing.Size(1111, 604);
             this.Controls.Add(this.lblContactNr);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tbContactNr);

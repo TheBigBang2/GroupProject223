@@ -81,14 +81,14 @@ namespace GroupProject223
             string contactNR = tbContactNr.Text;
             string password = tbPassword.Text;
             string ConPassword = tbConPassword.Text;
-            string SecQuestion = cbSecurity.SelectedIndex.ToString();
+            string SecQuestion = cbSecurity.SelectedItem.ToString();
             string SecAnswer = tbSecAnswer.Text;
 
             try
             {
                 cnn = new SqlConnection(conString);
                 cnn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT into Person (System_ID, ID_Number, Email, Name ,Surname ,Contact_Nr ,Password, Security_Question, Security_Answer) VALUES ('"+SystemID+"','"+IdNumber+"','"+email+"','"+name+"','"+surname+"','"+contactNR+"','"+password+"','"+SecQuestion+"','"+SecAnswer+"')", cnn);
+                SqlCommand cmd = new SqlCommand("INSERT into Person (ID_Number, Email, Name ,Surname ,Contact_Nr ,Password, Security_Question, Security_Answer) VALUES ('"+IdNumber+"','"+email+"','"+name+"','"+surname+"','"+contactNR+"','"+password+"','"+SecQuestion+"','"+SecAnswer+"')", cnn);
                 cmd.ExecuteNonQuery();
                 adapter = new SqlDataAdapter("Select * From Person", cnn);
                 adapter.Fill(table);

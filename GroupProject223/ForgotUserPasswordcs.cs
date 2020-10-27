@@ -21,32 +21,41 @@ namespace GroupProject223
             lblChoose.Visible = false;
             btnPassword.Visible = false;
             btnUsername.Visible = false;
+            lblOption.Visible = false;
 
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string command = "Select * FROM Person ";
-            DataSet ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter(command, cnn);
-            DataTable dt = new DataTable();
-            adapter.Fill(ds);
-            DataColumn dc = new DataColumn();
-            dataGridView1.DataSource = ds.Tables[0];
-            dataGridView1.Columns["System_ID"].Visible = false;
-            dataGridView1.Columns["Security_Question"].Visible = false;
-            dataGridView1.Columns["Security_Answer"].Visible = false;
-            dataGridView1.Columns["Contact_Nr"].Visible = false;
-            dataGridView1.Columns["Email"].Visible = false;
-            dataGridView1.Columns["Password"].Visible = false;
-            dataGridView1.Columns[0].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
-            dataGridView1.Visible = true;
-            this.dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.Visible = true;
-            lblChoose.Visible = true;
-            btnPassword.Visible = true;
-            btnUsername.Visible = true;
-
+            if (tbSearch.Text != "")
+            {
+                SqlCommand cmd = new SqlCommand("Select * from Person Where (ID_Number, Email,Contact_Nr, Name , Surname) = ('" + tbSearch.Text + "')", cnn);
+                DataSet ds = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(ds);
+                DataColumn dc = new DataColumn();
+                dataGridView1.DataSource = ds.Tables[0];
+                dataGridView1.Columns["System_ID"].Visible = false;
+                dataGridView1.Columns["Security_Question"].Visible = false;
+                dataGridView1.Columns["Security_Answer"].Visible = false;
+                dataGridView1.Columns["Contact_Nr"].Visible = false;
+                dataGridView1.Columns["Email"].Visible = false;
+                dataGridView1.Columns["Password"].Visible = false;
+                dataGridView1.Columns[0].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
+                dataGridView1.Visible = true;
+                this.dataGridView1.AllowUserToAddRows = false;
+                dataGridView1.Visible = true;
+                lblChoose.Visible = true;
+                btnPassword.Visible = true;
+                btnUsername.Visible = true;
+                lblOption.Visible = true;
+            }
+            else 
+            {
+                MessageBox.Show("The search term : "+tbSearch.Text+" was not found. Please try again","Account not found",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                tbSearch.Focus();
+            }
 
         }
 
@@ -58,7 +67,7 @@ namespace GroupProject223
         private void btnPassword_Click(object sender, EventArgs e)
         {
             RetrievePassword recover = new RetrievePassword();
-            recover.Show();
+            recover.Show();         
             this.Close();
 
         }
