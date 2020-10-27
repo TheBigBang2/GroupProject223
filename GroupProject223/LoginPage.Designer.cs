@@ -48,7 +48,7 @@
             this.UpdateAccount = new System.Windows.Forms.LinkLabel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExxit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,7 +160,7 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(706, 513);
+            this.btnHelp.Location = new System.Drawing.Point(715, 513);
             this.btnHelp.Margin = new System.Windows.Forms.Padding(4);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(118, 38);
@@ -278,22 +278,23 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
-            // button1
+            // btnExxit
             // 
-            this.button1.Location = new System.Drawing.Point(832, 513);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 38);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Help";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExxit.Location = new System.Drawing.Point(841, 513);
+            this.btnExxit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExxit.Name = "btnExxit";
+            this.btnExxit.Size = new System.Drawing.Size(118, 38);
+            this.btnExxit.TabIndex = 28;
+            this.btnExxit.Text = "Exit";
+            this.btnExxit.UseVisualStyleBackColor = true;
+            this.btnExxit.Click += new System.EventHandler(this.btnExxit_Click);
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 554);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExxit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.UpdateAccount);
@@ -347,7 +348,7 @@
         private System.Windows.Forms.LinkLabel UpdateAccount;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExxit;
     }
 }
 

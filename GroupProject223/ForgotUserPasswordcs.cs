@@ -29,34 +29,98 @@ namespace GroupProject223
         {
             if (tbSearch.Text != "")
             {
-                SqlCommand cmd = new SqlCommand("Select * from Person Where (ID_Number, Email,Contact_Nr, Name , Surname) = ('" + tbSearch.Text + "')", cnn);
-                DataSet ds = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(ds);
-                DataColumn dc = new DataColumn();
-                dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns["System_ID"].Visible = false;
-                dataGridView1.Columns["Security_Question"].Visible = false;
-                dataGridView1.Columns["Security_Answer"].Visible = false;
-                dataGridView1.Columns["Contact_Nr"].Visible = false;
-                dataGridView1.Columns["Email"].Visible = false;
-                dataGridView1.Columns["Password"].Visible = false;
-                dataGridView1.Columns[0].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
+           
+                string searchValue = tbSearch.Text;
                 dataGridView1.Visible = true;
-                this.dataGridView1.AllowUserToAddRows = false;
-                dataGridView1.Visible = true;
-                lblChoose.Visible = true;
-                btnPassword.Visible = true;
-                btnUsername.Visible = true;
-                lblOption.Visible = true;
+                
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {                   
+                    for (int i = 0; i < row.Cells.Count; i++)
+                    {
+                        if (row.Cells[i].Value != null && row.Cells[i].Value.ToString().Equals(searchValue))
+                        {
+                            int rowIndex = row.Index;
+                            dataGridView1.Rows[rowIndex].Cells. ToString() = true;
+                            
+                            MessageBox.Show(""+ dataGridView1.Rows[rowIndex].Selected.ToString());
+                            break;
+                        }
+                    }
+
+
+
+
+
+                    /*
+                    if (tbSearch.Text == idnum)
+                    {
+                        DialogResult result = MessageBox.Show("Found");
+                        if (result == DialogResult.OK)
+                        {
+                            dataGridView1.Visible = true;
+                            rowIndex = row.Index;
+                           
+                            break;
+                        }
+
+
+                    }
+                    else if (searchValue == nr)
+                    {
+                        DialogResult result = MessageBox.Show("Found");
+                        if (result == DialogResult.OK)
+                        {
+                            dataGridView1.Visible = true;
+                            rowIndex = row.Index;
+                   
+                            break;
+                        }
+                        
+                        
+                        
+                    }
+                    else if (searchValue == name)
+                    {
+                        DialogResult result = MessageBox.Show("Found");
+                        if (result == DialogResult.OK)
+                        {
+                            dataGridView1.Visible = true;
+                            rowIndex = row.Index;
+                          
+                            break;
+                        }
+
+
+
+
+                    }
+                    else if (searchValue == surname)
+                    {
+                        DialogResult result = MessageBox.Show("Found");
+                        if (result == DialogResult.OK)
+                        {
+                            dataGridView1.Visible = true;                           
+                  
+                            break;
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not found");
+                    }
+                    */
+                }
+                //     SqlCommand cmd = new SqlCommand("Select * from Person Where ID_Number ='" + tbSearch.Text + "' , Contact_Nr ='" + tbSearch.Text + "' , Name ='" + tbSearch.Text + "' , Surname ='" + tbSearch.Text + "' ", cnn);              
+              //  dataGridView1.Rows[rowIndex].Selected = true;
+
             }
-            else 
+            else
             {
-                MessageBox.Show("The search term : "+tbSearch.Text+" was not found. Please try again","Account not found",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                MessageBox.Show("The search term : " + tbSearch.Text + " was not found. Please try again", "Account not found", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 tbSearch.Focus();
             }
-
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -81,6 +145,38 @@ namespace GroupProject223
             RetrieveSystemID recover2 = new RetrieveSystemID();
             recover2.Show();
             this.Close();
+        }
+
+        private void ForgotUserPasswordcs_Load(object sender, EventArgs e)
+        {
+            string command = "Select * FROM Person ";
+            DataSet ds = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter(command, cnn);
+            adapter.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        //   dataGridView1.Columns["System_ID"].Visible = false;
+         //   dataGridView1.Columns["Security_Question"].Visible = false;
+       //     dataGridView1.Columns["Security_Answer"].Visible = false;
+      //      dataGridView1.Columns["Contact_Nr"].Visible = false;
+    //        dataGridView1.Columns["Email"].Visible = false;
+    //        dataGridView1.Columns["Password"].Visible = false;
+     //       dataGridView1.Columns[0].DefaultCellStyle.BackColor = System.Drawing.Color.Green;
+
+            this.dataGridView1.AllowUserToAddRows = false;
+           
+            lblChoose.Visible = true;
+            btnPassword.Visible = true;
+            btnUsername.Visible = true;
+            lblOption.Visible = true;
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            //       SqlCommand cmd = new SqlCommand("Select * from Person WHERE ID_Number LIKE '" + tbSearch.Text + "' AND Contact_Nr LIKE '" + tbSearch.Text + "'AND Name LIKE '" + tbSearch.Text + "'AND Surname LIKE'" + tbSearch.Text + "'", cnn);
+            //         DataTable dt = new DataTable();
+            //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //       adapter.Fill(dt);
+            //         dataGridView1.DataSource = dt;
         }
     }
 }

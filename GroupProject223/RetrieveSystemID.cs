@@ -19,10 +19,8 @@ namespace GroupProject223
             InitializeComponent();
             string command = "Select System_ID FROM Person ";
             DataSet ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter(command, cnn);
-            DataTable dt = new DataTable();
-            adapter.Fill(ds);
-            DataColumn dc = new DataColumn();
+            SqlDataAdapter adapter = new SqlDataAdapter(command, cnn);     
+            adapter.Fill(ds);          
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.RowHeadersVisible = false;
             foreach (DataGridViewColumn column in dataGridView1.Columns)

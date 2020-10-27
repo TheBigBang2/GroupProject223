@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,13 +60,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblIDNum = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblConPassword = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblValid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 31);
+            this.label1.Location = new System.Drawing.Point(449, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(448, 52);
             this.label1.TabIndex = 1;
@@ -82,7 +85,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(193, 113);
+            this.label2.Location = new System.Drawing.Point(204, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 22);
             this.label2.TabIndex = 2;
@@ -251,31 +254,47 @@
             // 
             this.tbSystemID.Enabled = false;
             this.tbSystemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSystemID.Location = new System.Drawing.Point(374, 105);
+            this.tbSystemID.Location = new System.Drawing.Point(393, 105);
             this.tbSystemID.MaxLength = 5;
             this.tbSystemID.Name = "tbSystemID";
             this.tbSystemID.ReadOnly = true;
-            this.tbSystemID.Size = new System.Drawing.Size(100, 35);
+            this.tbSystemID.Size = new System.Drawing.Size(81, 35);
             this.tbSystemID.TabIndex = 39;
             // 
             // lblView
             // 
             this.lblView.AutoSize = true;
-            this.lblView.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblView.Location = new System.Drawing.Point(269, 483);
+            this.lblView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView.Location = new System.Drawing.Point(291, 558);
             this.lblView.Name = "lblView";
-            this.lblView.Size = new System.Drawing.Size(535, 25);
+            this.lblView.Size = new System.Drawing.Size(642, 29);
             this.lblView.TabIndex = 40;
-            this.lblView.Text = "Your details are currently saved as the following :\r\n";
+            this.lblView.Text = "Your details was succesfully updated to the following :\r\n";
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(163, 511);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(113, 590);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 49;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(718, 109);
+            this.dataGridView1.Size = new System.Drawing.Size(1000, 89);
             this.dataGridView1.TabIndex = 41;
             // 
             // lblSecAnswer
@@ -304,11 +323,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(203, 435);
+            this.label11.Location = new System.Drawing.Point(233, 433);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(295, 50);
+            this.label11.Size = new System.Drawing.Size(265, 25);
             this.label11.TabIndex = 45;
-            this.label11.Text = "     Personal security answer :\r\n\r\n";
+            this.label11.Text = "Personal security answer :";
             // 
             // tbSecAnswer
             // 
@@ -344,9 +363,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(887, 508);
+            this.btnUpdate.Location = new System.Drawing.Point(307, 480);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(299, 59);
+            this.btnUpdate.Size = new System.Drawing.Size(300, 75);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update Info";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -354,103 +373,115 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(887, 573);
+            this.btnBack.Location = new System.Drawing.Point(613, 480);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(299, 59);
+            this.btnBack.Size = new System.Drawing.Size(303, 75);
             this.btnBack.TabIndex = 48;
             this.btnBack.Text = "Back to login";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label13
+            // lblIDNum
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(480, 211);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 17);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Required Field !";
+            this.lblIDNum.AutoSize = true;
+            this.lblIDNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDNum.ForeColor = System.Drawing.Color.Red;
+            this.lblIDNum.Location = new System.Drawing.Point(480, 211);
+            this.lblIDNum.Name = "lblIDNum";
+            this.lblIDNum.Size = new System.Drawing.Size(123, 17);
+            this.lblIDNum.TabIndex = 49;
+            this.lblIDNum.Text = "Required Field !";
             // 
-            // label14
+            // lblPassword
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(480, 305);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 17);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "Required Field !";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.Red;
+            this.lblPassword.Location = new System.Drawing.Point(480, 305);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(123, 17);
+            this.lblPassword.TabIndex = 50;
+            this.lblPassword.Text = "Required Field !";
             // 
-            // label15
+            // lblConPassword
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(480, 355);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 17);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Required Field !";
+            this.lblConPassword.AutoSize = true;
+            this.lblConPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConPassword.ForeColor = System.Drawing.Color.Red;
+            this.lblConPassword.Location = new System.Drawing.Point(480, 355);
+            this.lblConPassword.Name = "lblConPassword";
+            this.lblConPassword.Size = new System.Drawing.Size(123, 17);
+            this.lblConPassword.TabIndex = 51;
+            this.lblConPassword.Text = "Required Field !";
             // 
-            // label16
+            // lblName
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(1005, 206);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(123, 17);
-            this.label16.TabIndex = 52;
-            this.label16.Text = "Required Field !";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Red;
+            this.lblName.Location = new System.Drawing.Point(1005, 206);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(123, 17);
+            this.lblName.TabIndex = 52;
+            this.lblName.Text = "Required Field !";
             // 
-            // label17
+            // lblSurname
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(1005, 254);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 17);
-            this.label17.TabIndex = 53;
-            this.label17.Text = "Required Field !";
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.ForeColor = System.Drawing.Color.Red;
+            this.lblSurname.Location = new System.Drawing.Point(1005, 254);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(123, 17);
+            this.lblSurname.TabIndex = 53;
+            this.lblSurname.Text = "Required Field !";
             // 
-            // label18
+            // lblEmail
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(1005, 311);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(123, 17);
-            this.label18.TabIndex = 54;
-            this.label18.Text = "Required Field !";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblEmail.Location = new System.Drawing.Point(1005, 311);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(123, 17);
+            this.lblEmail.TabIndex = 54;
+            this.lblEmail.Text = "Required Field !";
             // 
-            // label19
+            // lblContact
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(480, 261);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(123, 17);
-            this.label19.TabIndex = 55;
-            this.label19.Text = "Required Field !";
+            this.lblContact.AutoSize = true;
+            this.lblContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.Color.Red;
+            this.lblContact.Location = new System.Drawing.Point(480, 261);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(123, 17);
+            this.lblContact.TabIndex = 55;
+            this.lblContact.Text = "Required Field !";
+            // 
+            // lblValid
+            // 
+            this.lblValid.AutoSize = true;
+            this.lblValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValid.ForeColor = System.Drawing.Color.Red;
+            this.lblValid.Location = new System.Drawing.Point(656, 335);
+            this.lblValid.Name = "lblValid";
+            this.lblValid.Size = new System.Drawing.Size(472, 17);
+            this.lblValid.TabIndex = 56;
+            this.lblValid.Text = "(Please enter a valid Email in the format : example@email.com:)";
             // 
             // EditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 644);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.ClientSize = new System.Drawing.Size(1225, 711);
+            this.Controls.Add(this.lblValid);
+            this.Controls.Add(this.lblContact);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblSurname);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblConPassword);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblIDNum);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblSecAnswer);
             this.Controls.Add(this.lblSecurityQues);
@@ -522,12 +553,13 @@
         private System.Windows.Forms.Button btnUpdate;
         protected System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblIDNum;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblConPassword;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.Label lblValid;
     }
 }
