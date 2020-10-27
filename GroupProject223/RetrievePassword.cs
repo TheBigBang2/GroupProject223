@@ -18,12 +18,12 @@ namespace GroupProject223
         {
             InitializeComponent();
             lbl1.Visible = false;
-            lbl2.Visible = false;
+            lblName.Visible = false;
             lbl3.Visible = false;
             lbl4.Visible = false;
-            dataGridView1.Visible = false;
-            btnLogin.Visible = false;
-            btnChange.Visible = false;
+            
+           
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,25 +39,21 @@ namespace GroupProject223
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            lbl1.Visible = true;
-            lbl2.Visible = true;
-            lbl3.Visible = true;
-            lbl4.Visible = true;
-            dataGridView1.Visible = true;
-            btnLogin.Visible = true;
-            btnChange.Visible = true;
-            string command = "Select Password FROM Person ";
-            DataSet ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter(command, cnn);
-            DataTable dt = new DataTable();
-            adapter.Fill(ds);
-            DataColumn dc = new DataColumn();
-            dataGridView1.DataSource = ds.Tables[0];
-            dataGridView1.RowHeadersVisible = false;                
-           
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
+          
+            cbSecurity.Text = ForgotUserPasswordcs.question;
+            if(tbSecAnswer.Text == ForgotUserPasswordcs.answer)
             {
-                column.Width = 200;
+                lblPass.Text = ForgotUserPasswordcs.password;
+                lblName.Text = ForgotUserPasswordcs.UserName;
+                lbl1.Visible = true;
+                lblName.Visible = true;
+                lbl3.Visible = true;
+                lbl4.Visible = true;
+                btnLogin.Visible = true;
+            }
+            else 
+            {
+                MessageBox.Show("Oops ! Try again");
             }
         }
 
