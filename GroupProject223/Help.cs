@@ -16,5 +16,12 @@ namespace GroupProject223
         {
             InitializeComponent();
         }
+
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

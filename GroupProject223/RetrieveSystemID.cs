@@ -17,21 +17,18 @@ namespace GroupProject223
         public RetrieveSystemID()
         {
             InitializeComponent();
-            string command = "Select System_ID FROM Person ";
-            DataSet ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter(command, cnn);     
-            adapter.Fill(ds);          
-            dataGridView1.DataSource = ds.Tables[0];
-            dataGridView1.RowHeadersVisible = false;
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
-            {
-                column.Width = 250;
-            }
+ 
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RetrieveSystemID_Load(object sender, EventArgs e)
+        {
+            lblName.Text = ForgotUserPasswordcs.UserName;
+            lblID.Text = ForgotUserPasswordcs.SystemID;
         }
     }
 }

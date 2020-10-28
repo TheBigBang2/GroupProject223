@@ -9,10 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GroupProject223
 {
     public partial class ForgotUserPasswordcs : Form
     {
+        public static string SystemID;
+        public static string UserName;
+        public static string password;
+        public static string question;
+        public static string answer;
+
         private SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\GroupProject223\GroupProject223\Person.mdf;Integrated Security=True");
         public ForgotUserPasswordcs()
         {
@@ -130,6 +137,9 @@ namespace GroupProject223
 
         private void btnPassword_Click(object sender, EventArgs e)
         {
+            password = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            question = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            answer = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             RetrievePassword recover = new RetrievePassword();
             recover.Show();         
             this.Close();
@@ -142,6 +152,8 @@ namespace GroupProject223
 
         private void btnUsername_Click(object sender, EventArgs e)
         {
+            SystemID = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            UserName = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             RetrieveSystemID recover2 = new RetrieveSystemID();
             recover2.Show();
             this.Close();
