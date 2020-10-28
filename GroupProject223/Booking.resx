@@ -117,8 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label6.Text" xml:space="preserve">
-    <value>4, After you have navigated through the forgot password or ID link you will need to search for your account by 
-providing the ID Number,Contact Nr, Name or Surname which was used when the account was created.</value>
-  </data>
 </root>

@@ -28,24 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.tbSecAnswer = new System.Windows.Forms.TextBox();
             this.cbSecurity = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.lbl4 = new System.Windows.Forms.Label();
-            this.btnChange = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblPass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -100,15 +96,15 @@
             this.lbl1.TabIndex = 32;
             this.lbl1.Text = "Hi,";
             // 
-            // lbl2
+            // lblName
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(308, 250);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(70, 25);
-            this.lbl2.TabIndex = 33;
-            this.lbl2.Text = "label2";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(308, 250);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(70, 25);
+            this.lblName.TabIndex = 33;
+            this.lblName.Text = "label2";
             // 
             // lbl3
             // 
@@ -124,25 +120,15 @@
             // 
             this.lbl4.AutoSize = true;
             this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(330, 286);
+            this.lbl4.Location = new System.Drawing.Point(346, 297);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(430, 22);
             this.lbl4.TabIndex = 35;
             this.lbl4.Text = "Your Password information is saved as the following:\r\n";
             // 
-            // btnChange
-            // 
-            this.btnChange.Location = new System.Drawing.Point(660, 336);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(100, 50);
-            this.btnChange.TabIndex = 36;
-            this.btnChange.Text = "Change My Password";
-            this.btnChange.UseVisualStyleBackColor = true;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
-            // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(766, 336);
+            this.btnLogin.Location = new System.Drawing.Point(852, 297);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 50);
             this.btnLogin.TabIndex = 37;
@@ -195,50 +181,30 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // dataGridView1
+            // lblPass
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.13913F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.13913F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.Location = new System.Drawing.Point(454, 320);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 49;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(200, 83);
-            this.dataGridView1.TabIndex = 42;
+            this.lblPass.AutoSize = true;
+            this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.Location = new System.Drawing.Point(537, 336);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(70, 25);
+            this.lblPass.TabIndex = 42;
+            this.lblPass.Text = "label2";
             // 
             // RetrievePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 426);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lbl3);
-            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbSecAnswer);
@@ -246,7 +212,6 @@
             this.Controls.Add(this.label4);
             this.Name = "RetrievePassword";
             this.Text = "RetrievePassword";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,15 +223,14 @@
         private System.Windows.Forms.ComboBox cbSecurity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Label lbl4;
-        private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblPass;
     }
 }
