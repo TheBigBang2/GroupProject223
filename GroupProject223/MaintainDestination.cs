@@ -30,7 +30,7 @@ namespace GroupProject223
         {
             try
             {
-                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
+                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\source\repos\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
                 conn = new SqlConnection(conStr);
                 conn.Open();
                 label5.Text = "Connected!";
@@ -136,6 +136,13 @@ namespace GroupProject223
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void MaintainDestination_Load_1(object sender, EventArgs e)
         {
 
         }

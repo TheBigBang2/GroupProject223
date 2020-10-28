@@ -6,7 +6,11 @@ using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 namespace GroupProject223
-{
+{/*28692837
+  28554485
+    28447069
+    29578949*/
+    
     public partial class LoginPage : Form
     {
         public static string SetValueForUserID = "";
@@ -17,9 +21,11 @@ namespace GroupProject223
         public static string SetValueForContactNumber = "";
         public static string SetValueForSecQuestion = "";
         public static string SetValueForSeqAnswer = "";
+        public static string name = "admin";
+        public static string password = "admin";
         private DataTable table = new DataTable();
-        private SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\GroupProject223\GroupProject223\Person.mdf;Integrated Security=True");
-
+        private SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\Source\Repos\GroupProject223\GroupProject223\Person.mdf;Integrated Security=True");
+     
 
         public LoginPage()
         {
@@ -94,8 +100,10 @@ namespace GroupProject223
                             DialogResult result = MessageBox.Show("Succesfully Logged In ", "Login Succesfull !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) ;
                             if (result == DialogResult.OK)
                             {
-                         
+
                                 //Open first form after Member login
+                                Booking b1 = new Booking();
+                                b1.Show();
                                 refreshPage();
                                 break;
                             }
@@ -231,7 +239,10 @@ namespace GroupProject223
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-
+            label6.Hide();
+            label9.Hide();
+            textBox1.Hide();
+            textBox2.Hide();
         }
 
 
@@ -266,8 +277,24 @@ namespace GroupProject223
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
-            f1.Show();
+            label6.Show();
+            label9.Show();
+            textBox1.Show();
+            textBox2.Show();
+            if ((textBox1.Text == name) && (textBox2.Text == password))
+            {
+                f1.Show();
+            }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+
+            if ((textBox1.Text == name) && (textBox2.Text == password))
+            {
+                f1.Show();
+            }
+        }
     }
 }

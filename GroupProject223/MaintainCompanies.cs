@@ -147,11 +147,25 @@ namespace GroupProject223
             this.Close();
         }
 
+
+
+        private void MaintainCompanies_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void MaintainCompanies_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
         private void MaintainCompanies_Load(object sender, EventArgs e)
         {
             try
             {
-                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
+                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\source\repos\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
                 conn = new SqlConnection(conStr);
                 conn.Open();
                 label3.Text = "Connected!";

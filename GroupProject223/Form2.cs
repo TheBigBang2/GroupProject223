@@ -31,7 +31,7 @@ namespace GroupProject223
         {
             try
             {
-                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
+                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\source\repos\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
                 conn = new SqlConnection(conStr);
                 conn.Open();
                 label5.Text = "Connected!";
@@ -194,6 +194,13 @@ namespace GroupProject223
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void MainUser_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
