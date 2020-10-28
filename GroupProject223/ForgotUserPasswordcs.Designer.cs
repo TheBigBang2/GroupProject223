@@ -48,6 +48,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSelect});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -62,6 +63,7 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.dataGridView1.Location = new System.Drawing.Point(177, 243);
+
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 49;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,8 +71,10 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.Height = 24;
+
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(687, 136);
+
             this.dataGridView1.TabIndex = 25;
             // 
             // btnSelect
@@ -94,18 +98,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
+
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(211, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(599, 46);
+
             this.label1.TabIndex = 26;
             this.label1.Text = "Forgot Username Or Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(84, 90);
+
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(821, 25);
             this.label2.TabIndex = 27;
@@ -164,6 +172,7 @@
             // 
             // btnAccount
             // 
+
             this.btnAccount.BackColor = System.Drawing.Color.Red;
             this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -174,9 +183,11 @@
             this.btnAccount.Text = "Cancel ";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+
             // 
             // lblOption
             // 
+
             this.lblOption.AutoSize = true;
             this.lblOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOption.Location = new System.Drawing.Point(374, 382);
@@ -184,11 +195,13 @@
             this.lblOption.Size = new System.Drawing.Size(301, 20);
             this.lblOption.TabIndex = 40;
             this.lblOption.Text = "Choose one of the following options:";
+
             // 
             // ForgotUserPasswordcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1011, 487);
             this.Controls.Add(this.lblOption);
             this.Controls.Add(this.btnAccount);
@@ -197,9 +210,11 @@
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tbSearch);
+
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ForgotUserPasswordcs";
             this.Text = "ForgotUserPasswordcs";
             this.Load += new System.EventHandler(this.ForgotUserPasswordcs_Load);
