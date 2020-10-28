@@ -47,8 +47,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.UpdateAccount = new System.Windows.Forms.LinkLabel();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnExxit = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,9 @@
             this.label1.Location = new System.Drawing.Point(325, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+
             this.label1.Size = new System.Drawing.Size(391, 59);
+
 
             this.label1.TabIndex = 0;
             this.label1.Text = "Pukkie Airways\r\n";
@@ -100,7 +103,12 @@
             this.label2.Location = new System.Drawing.Point(195, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
+
+            this.label2.Size = new System.Drawing.Size(651, 39);
+            this.label2.TabIndex = 5;
+
            this.label2.TabIndex = 5;
+
             this.label2.Text = "Please fill in the following login details :\r\n";
             // 
             // tbUserID
@@ -109,7 +117,9 @@
             this.tbUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUserID.Location = new System.Drawing.Point(503, 174);
             this.tbUserID.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserID.Name = "tbUserID";
+
+            this.tbUserID.Size = new System.Drawing.Size(84, 29);
+
             this.tbUserID.Size = new System.Drawing.Size(84, 28);
 
             this.tbUserID.TabIndex = 6;
@@ -121,7 +131,11 @@
             this.tbPassword.Location = new System.Drawing.Point(414, 230);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
+
+          
+
             this.tbPassword.Size = new System.Drawing.Size(276, 28);
+
 
             this.tbPassword.TabIndex = 7;
             // 
@@ -134,7 +148,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 27);
+            this.label3.Size = new System.Drawing.Size(142, 28);
             this.label3.TabIndex = 8;
             this.label3.Text = "System ID :";
             // 
@@ -147,7 +161,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 26);
+            this.label4.Size = new System.Drawing.Size(181, 27);
             this.label4.TabIndex = 9;
             this.label4.Text = "User Password:";
             // 
@@ -160,7 +174,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(204, 26);
+            this.label5.Size = new System.Drawing.Size(215, 27);
             this.label5.TabIndex = 10;
             this.label5.Text = "Confirm Password:";
             // 
@@ -171,7 +185,9 @@
             this.tbConfirmPassword.Location = new System.Drawing.Point(414, 268);
             this.tbConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
+
             this.tbConfirmPassword.Size = new System.Drawing.Size(276, 28);
+
 
             this.tbConfirmPassword.TabIndex = 11;
             // 
@@ -198,7 +214,7 @@
             this.ReqID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 
             this.ReqID.Name = "ReqID";
-            this.ReqID.Size = new System.Drawing.Size(110, 16);
+            this.ReqID.Size = new System.Drawing.Size(120, 16);
             this.ReqID.TabIndex = 18;
             this.ReqID.Text = "Required Field !";
             // 
@@ -212,7 +228,7 @@
             this.ReqPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 
             this.ReqPassword.Name = "ReqPassword";
-            this.ReqPassword.Size = new System.Drawing.Size(110, 16);
+            this.ReqPassword.Size = new System.Drawing.Size(120, 16);
             this.ReqPassword.TabIndex = 19;
             this.ReqPassword.Text = "Required Field !";
             // 
@@ -226,7 +242,7 @@
             this.ReqConPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 
             this.ReqConPassword.Name = "ReqConPassword";
-            this.ReqConPassword.Size = new System.Drawing.Size(110, 16);
+            this.ReqConPassword.Size = new System.Drawing.Size(120, 16);
             this.ReqConPassword.TabIndex = 20;
             this.ReqConPassword.Text = "Required Field !";
             // 
@@ -293,6 +309,17 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // btnExxit
+            // 
+            this.btnExxit.Location = new System.Drawing.Point(841, 513);
+            this.btnExxit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExxit.Name = "btnExxit";
+            this.btnExxit.Size = new System.Drawing.Size(118, 38);
+            this.btnExxit.TabIndex = 28;
+            this.btnExxit.Text = "Exit";
+            this.btnExxit.UseVisualStyleBackColor = true;
+            this.btnExxit.Click += new System.EventHandler(this.btnExxit_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -306,22 +333,22 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
-            // btnExxit
+            // button1
             // 
-            this.btnExxit.Location = new System.Drawing.Point(841, 513);
-            this.btnExxit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExxit.Name = "btnExxit";
-            this.btnExxit.Size = new System.Drawing.Size(118, 38);
-            this.btnExxit.TabIndex = 28;
-            this.btnExxit.Text = "Exit";
-            this.btnExxit.UseVisualStyleBackColor = true;
-            this.btnExxit.Click += new System.EventHandler(this.btnExxit_Click);
+            this.button1.Location = new System.Drawing.Point(22, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 75);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExxit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegister);
@@ -378,8 +405,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.LinkLabel UpdateAccount;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnExxit;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

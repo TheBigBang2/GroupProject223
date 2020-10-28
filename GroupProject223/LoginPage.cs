@@ -262,5 +262,12 @@ namespace GroupProject223
             Application.Exit();
         }
 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
+
     }
 }
