@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 namespace GroupProject223
 {
     public partial class MaintainBooking : Form
-    {
+    {        Int64 id;
         public string conStr, str;
-        Int64 id;
+
         SqlConnection conn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         SqlDataAdapter adapt = new SqlDataAdapter();
@@ -217,11 +217,16 @@ namespace GroupProject223
             this.Close();
         }
 
+        private void MaintainBooking_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void MaintainBooking_Load(object sender, EventArgs e)
         {
             try
             {
-                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\Source\Repos\TheBigBang2\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
+                conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ruang\source\repos\GroupProject223\GroupProject223\Airline.mdf;Integrated Security=True";
                 conn = new SqlConnection(conStr);
                 conn.Open();
 

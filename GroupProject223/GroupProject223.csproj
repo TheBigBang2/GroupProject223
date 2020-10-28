@@ -61,13 +61,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="Booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking.Designer.cs">
+      <DependentUpon>Booking.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditAccount.Designer.cs">
       <DependentUpon>EditAccount.cs</DependentUpon>
-
     </Compile>
     <Compile Include="ForgotUserPasswordcs.cs">
       <SubType>Form</SubType>
@@ -123,7 +127,6 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-
     <Compile Include="RetrievePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,9 +143,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Select Meal.Designer.cs" />
+    <EmbeddedResource Include="Booking.resx">
+      <DependentUpon>Booking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotUserPasswordcs.resx">
       <DependentUpon>ForgotUserPasswordcs.cs</DependentUpon>
