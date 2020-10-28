@@ -38,35 +38,42 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.ReqID = new System.Windows.Forms.Label();
             this.ReqPassword = new System.Windows.Forms.Label();
             this.ReqConPassword = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.clickForget = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.UpdateAccount = new System.Windows.Forms.LinkLabel();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExxit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(325, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(304, 48);
+            this.label1.Size = new System.Drawing.Size(391, 59);
+
             this.label1.TabIndex = 0;
             this.label1.Text = "Pukkie Airways\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(92, 222);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(517, 318);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(532, 67);
+            this.btnLogin.Size = new System.Drawing.Size(236, 82);
+
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -74,10 +81,12 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(590, 337);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.btnExit.Location = new System.Drawing.Point(1030, 664);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(78, 28);
+            this.btnExit.Size = new System.Drawing.Size(155, 65);
+
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -86,188 +95,245 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(129, 54);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(195, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(607, 39);
-            this.label2.TabIndex = 5;
+           this.label2.TabIndex = 5;
             this.label2.Text = "Please fill in the following login details :\r\n";
             // 
             // tbUserID
             // 
-            this.tbUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserID.Location = new System.Drawing.Point(172, 98);
-            this.tbUserID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.tbUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUserID.Location = new System.Drawing.Point(503, 174);
+            this.tbUserID.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserID.Name = "tbUserID";
-            this.tbUserID.Size = new System.Drawing.Size(396, 36);
+            this.tbUserID.Size = new System.Drawing.Size(84, 28);
+
             this.tbUserID.TabIndex = 6;
             // 
             // tbPassword
             // 
-            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(173, 141);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Location = new System.Drawing.Point(414, 230);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(395, 36);
+            this.tbPassword.Size = new System.Drawing.Size(276, 28);
+
             this.tbPassword.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 98);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.label3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(359, 174);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 29);
+            this.label3.Size = new System.Drawing.Size(136, 27);
             this.label3.TabIndex = 8;
-            this.label3.Text = "User ID :";
+            this.label3.Text = "System ID :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 141);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.label4.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(232, 232);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 29);
+            this.label4.Size = new System.Drawing.Size(174, 26);
             this.label4.TabIndex = 9;
             this.label4.Text = "User Password:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 180);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.label5.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(202, 270);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 29);
+            this.label5.Size = new System.Drawing.Size(204, 26);
             this.label5.TabIndex = 10;
             this.label5.Text = "Confirm Password:";
             // 
             // tbConfirmPassword
             // 
-            this.tbConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbConfirmPassword.Location = new System.Drawing.Point(172, 180);
-            this.tbConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.tbConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConfirmPassword.Location = new System.Drawing.Point(414, 268);
+            this.tbConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
-            this.tbConfirmPassword.Size = new System.Drawing.Size(396, 36);
+            this.tbConfirmPassword.Size = new System.Drawing.Size(276, 28);
+
             this.tbConfirmPassword.TabIndex = 11;
             // 
-            // button3
+            // btnHelp
             // 
-            this.button3.Location = new System.Drawing.Point(505, 337);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 28);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Help";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(170, 344);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 15);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Dont have an account ?";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(293, 344);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(200, 15);
-            this.linkLabel1.TabIndex = 14;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Click here to register a new account";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+
+            this.btnHelp.Location = new System.Drawing.Point(715, 513);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(118, 38);
+            this.btnHelp.TabIndex = 12;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.button3_Click);
+
             // 
             // ReqID
             // 
             this.ReqID.AutoSize = true;
-            this.ReqID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReqID.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReqID.ForeColor = System.Drawing.Color.Red;
-            this.ReqID.Location = new System.Drawing.Point(572, 104);
-            this.ReqID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.ReqID.Location = new System.Drawing.Point(595, 182);
+            this.ReqID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.ReqID.Name = "ReqID";
-            this.ReqID.Size = new System.Drawing.Size(125, 18);
+            this.ReqID.Size = new System.Drawing.Size(110, 16);
             this.ReqID.TabIndex = 18;
             this.ReqID.Text = "Required Field !";
             // 
             // ReqPassword
             // 
             this.ReqPassword.AutoSize = true;
-            this.ReqPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReqPassword.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReqPassword.ForeColor = System.Drawing.Color.Red;
-            this.ReqPassword.Location = new System.Drawing.Point(572, 146);
-            this.ReqPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.ReqPassword.Location = new System.Drawing.Point(698, 238);
+            this.ReqPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.ReqPassword.Name = "ReqPassword";
-            this.ReqPassword.Size = new System.Drawing.Size(125, 18);
+            this.ReqPassword.Size = new System.Drawing.Size(110, 16);
             this.ReqPassword.TabIndex = 19;
             this.ReqPassword.Text = "Required Field !";
             // 
             // ReqConPassword
             // 
             this.ReqConPassword.AutoSize = true;
-            this.ReqConPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReqConPassword.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReqConPassword.ForeColor = System.Drawing.Color.Red;
-            this.ReqConPassword.Location = new System.Drawing.Point(572, 186);
-            this.ReqConPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.ReqConPassword.Location = new System.Drawing.Point(698, 277);
+            this.ReqConPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.ReqConPassword.Name = "ReqConPassword";
-            this.ReqConPassword.Size = new System.Drawing.Size(125, 18);
+            this.ReqConPassword.Size = new System.Drawing.Size(110, 16);
             this.ReqConPassword.TabIndex = 20;
             this.ReqConPassword.Text = "Required Field !";
             // 
-            // linkLabel2
+            // clickForget
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(293, 292);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(64, 15);
-            this.linkLabel2.TabIndex = 21;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Click here \r\n";
+
+            this.clickForget.AutoSize = true;
+            this.clickForget.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clickForget.Location = new System.Drawing.Point(619, 417);
+            this.clickForget.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.clickForget.Name = "clickForget";
+            this.clickForget.Size = new System.Drawing.Size(97, 23);
+            this.clickForget.TabIndex = 21;
+            this.clickForget.TabStop = true;
+            this.clickForget.Text = "Click here";
+            this.clickForget.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.clickForget_LinkClicked);
+
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(108, 292);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(274, 417);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(209, 15);
+            this.label7.Size = new System.Drawing.Size(338, 23);
             this.label7.TabIndex = 22;
-            this.label7.Text = "I Forgot My Username or Password ?";
+            this.label7.Text = "I Forgot My Username or Password :";
             // 
-            // button1
+            // label8
             // 
-            this.button1.Location = new System.Drawing.Point(629, 351);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F);
+            this.label8.Location = new System.Drawing.Point(216, 460);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(396, 23);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "I want to update or edit my account details :";
+            // 
+            // UpdateAccount
+            // 
+            this.UpdateAccount.AutoSize = true;
+            this.UpdateAccount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateAccount.Location = new System.Drawing.Point(620, 460);
+            this.UpdateAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UpdateAccount.Name = "UpdateAccount";
+            this.UpdateAccount.Size = new System.Drawing.Size(97, 23);
+            this.UpdateAccount.TabIndex = 25;
+            this.UpdateAccount.TabStop = true;
+            this.UpdateAccount.Text = "Click here";
+            this.UpdateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateAccount_LinkClicked);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(278, 318);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(231, 82);
+            this.btnRegister.TabIndex = 26;
+            this.btnRegister.Text = "Register New Account";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 469);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 49;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(12, 110);
+            this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            // 
+            // btnExxit
+            // 
+            this.btnExxit.Location = new System.Drawing.Point(841, 513);
+            this.btnExxit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExxit.Name = "btnExxit";
+            this.btnExxit.Size = new System.Drawing.Size(118, 38);
+            this.btnExxit.TabIndex = 28;
+            this.btnExxit.Text = "Exit";
+            this.btnExxit.UseVisualStyleBackColor = true;
+            this.btnExxit.Click += new System.EventHandler(this.btnExxit_Click);
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 366);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(963, 554);
+            this.Controls.Add(this.btnExxit);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.UpdateAccount);
+            this.Controls.Add(this.label8);
+
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.clickForget);
             this.Controls.Add(this.ReqConPassword);
             this.Controls.Add(this.ReqPassword);
             this.Controls.Add(this.ReqID);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.tbConfirmPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -278,10 +344,14 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginPage";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,15 +369,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbConfirmPassword;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Label ReqID;
         private System.Windows.Forms.Label ReqPassword;
         private System.Windows.Forms.Label ReqConPassword;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel clickForget;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.LinkLabel UpdateAccount;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnExxit;
     }
 }
 

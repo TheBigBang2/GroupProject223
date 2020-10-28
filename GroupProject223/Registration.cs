@@ -13,10 +13,10 @@ namespace GroupProject223
 {
     public partial class Registration : Form
     {
-        private SqlConnection cnn;
+        private SqlConnection cnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\GroupProject223\GroupProject223\Person.mdf;Integrated Security=True");
         private DataTable table = new DataTable();
-        private SqlDataAdapter adapter;
-        private String conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\GroupProject223\GroupProject223\Person.mdf;Integrated Security=True";
+
+        // private String conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\GroupProject223\GroupProject223\Person.mdf;Integrated Security=True";
         public Registration()
         {
             InitializeComponent();
@@ -24,88 +24,132 @@ namespace GroupProject223
             lblEmail.Visible = false;
             lblName.Visible = false;
             lblSurname.Visible = false;
-            lblContactNr.Visible = false;          
+            lblContactNr.Visible = false;
             lblPassword.Visible = false;
             lblConPassword.Visible = false;
+            lblSecurityQues.Visible = false;
+            lblSecAnswer.Visible = false;
+            dataGridView1.Visible = false;
+            lblValid.Visible = false;
+            cbSecurity.SelectedIndex = 0;
+
+            cnn.Open();
+            string command = "Select Count(*) FROM Person ";
+            DataSet ds = new DataSet();
+            SqlDataAdapter adapter2 = new SqlDataAdapter(command, cnn);   
+            adapter2.Fill(ds);           
+            dataGridView1.DataSource = ds.Tables[0];
+          //  int numRows = dataGridView1.Rows.Count - 1;
+          // tbSystemID.Text = " " + numRows;
+            cnn.Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
-        {
-            if (tbIDNum.Text == "")
-            {
-                lblID.Visible = true;
-            }
-            if (tbEmail.Text == "")
-            {
-                lblEmail.Visible = true;
-            }
-            if (tbName.Text == "")
-            {
-                lblName.Visible = true;
-            }
-            if (tbSurname.Text == "")
-            {
-                lblSurname.Visible = true;
-            }
-            if (tbContactNr.Text == "")
-            {
-                lblContactNr.Visible = true;
-            }
-            if (tbPassword.Text == "" || tbConPassword.Text == "")
-            {
-                lblPassword.Visible = true;
-                lblConPassword.Visible = true;
-            }
-            else if (tbPassword.Text != tbConPassword.Text)
-            {
-                MessageBox.Show("OOPS ! The passwords you entered did not match");
-            }
-
-            //This is where the Database entry will be made
-            tbSystemID.Text = "00001";
-            string SystemID = tbSystemID.Text;
+        {          
             string IdNumber = tbIDNum.Text;
             string email = tbEmail.Text;
             string name = tbName.Text;
             string surname = tbSurname.Text;
             string contactNR = tbContactNr.Text;
             string password = tbPassword.Text;
-            string ConPassword = tbConPassword.Text;        
+            string ConPassword = tbConPassword.Text;
+            string secQuestion = cbSecurity.ToString();
+            string secAnswer = tbSecAnswer.Text;
+            //FOR LOOP EMAIL VALIDATION
+            if (IsValidEmail(email) == false)
+            {
+                lblValid.Visible = true;
+                tbEmail.Focus();
+            }
+            //check id is 13
+            if (tbIDNum.Text.Length != 13)
+            {
+                DialogResult result = MessageBox.Show("Your ID Number is invalid.", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.OK)
+                {
+                    tbIDNum.Focus();
+                }
+            }
+            if (tbIDNum.Text == "" || tbEmail.Text == "" || tbName.Text == "" || tbSurname.Text == "" || tbContactNr.Text == "" || tbPassword.Text == "" || tbConPassword.Text == "")
+            {
+                MessageBox.Show("Please enter all Required Fields and try again", "Required Fields", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+                lblID.Visible = true;
+                lblEmail.Visible = true;
+                lblName.Visible = true;
+                lblSurname.Visible = true;
+                lblContactNr.Visible = true;
+                lblPassword.Visible = true;
+                lblConPassword.Visible = true;
+                lblSecurityQues.Visible = true;
+                lblSecAnswer.Visible = true;            
+            }   
+            else if (tbPassword.Text != tbConPassword.Text)
+            {
+                MessageBox.Show("OOPS ! The passwords you entered did not match");
+            }
+            //This is where the Database entry will be made
+            else 
+            {
+                try
+                {
 
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT into Person (ID_Number, Email,Contact_Nr, Name , Surname, Password, Security_Question, Security_Answer) VALUES ('" + IdNumber + "','" + email + "','" + contactNR + "','" + name + "','" + surname + "','" + password + "','" + secQuestion + "','" + secAnswer + "')", cnn);
+                    cmd.ExecuteNonQuery();                
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    cnn.Close();               
+                        DialogResult result = MessageBox.Show("Your registration was Successfully Processed","Registration Successfull", button, MessageBoxIcon.Exclamation);
+                        if (result == DialogResult.OK)
+                        {
+                            this.Close();                         
+                        }                                    
+                }
+                catch (SqlException se)
+                {                  
+                    MessageBox.Show(se.Message);
+                }
+            }    
+        }
+        bool IsValidEmail(string email)
+        {
             try
             {
-                cnn = new SqlConnection(conString);
-                cnn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT into Person (System_ID, ID_Number, Email, Name ,Surname ,Contact_Nr ,Password) VALUES ('" + SystemID + "','" + IdNumber + "','" + email + "','" + name + "','" + surname + "','" + contactNR + "','" + password + "')", cnn);
-                cmd.ExecuteNonQuery();
-                adapter = new SqlDataAdapter("Select * From Person", cnn);
-                adapter.Fill(table);
-                MessageBoxButtons button = MessageBoxButtons.OK;
-                if (table.Rows.Count != 0)
-                {
-                    DialogResult result = MessageBox.Show("Thank you and Congratulions Mr/Mrs" + tbSurname.Text + " on your new account !" +
-                       ""+ "\n" +"***Remember that you should use ID = '" + tbSystemID.Text+"'*** ", "Congratulations", button);
-                    if (result == DialogResult.OK)
-                    {
-                        this.Close();
-                        LoginPage page = new LoginPage();
-                        page.Show();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("The Registration was not succesfull. System Error. Please contact the system Creators.");
-                }
-                cnn.Close();
-
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
             }
-            catch (SqlException se)
+            catch
             {
-                MessageBox.Show(se.Message);
+                return false;
             }
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.Show();
+        }
+
+        private void Registration_Load(object sender, EventArgs e)
         {
 
         }

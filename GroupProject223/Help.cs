@@ -17,9 +17,11 @@ namespace GroupProject223
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            //testing github
+            this.Close();
+
         }
     }
 }
