@@ -40,7 +40,7 @@ namespace GroupProject223
                         if (row.Cells[i].Value != null && row.Cells[i].Value.ToString().Equals(searchValue))
                         {
                             int rowIndex = row.Index;
-                            dataGridView1.Rows[rowIndex].Cells. ToString() = true;
+                         //   dataGridView1.Rows[rowIndex].Cells. ToString() = true;
                             
                             MessageBox.Show(""+ dataGridView1.Rows[rowIndex].Selected.ToString());
                             break;
