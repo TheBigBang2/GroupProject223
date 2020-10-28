@@ -50,6 +50,7 @@
             this.btnExxit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,7 +297,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 75);
             this.button1.TabIndex = 29;
-            this.button1.Text = "button1";
+            this.button1.Text = "Admin";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -362,6 +363,7 @@
         private System.Windows.Forms.Button btnExxit;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
